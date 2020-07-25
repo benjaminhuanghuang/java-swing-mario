@@ -68,9 +68,9 @@ public class Mario extends Thread {
 					//���������ƶ�
 					gf.bg.x-=this.xspeed;
 					//�ϰ��������ƶ�
-					for (int i = 0; i <gf.eneryList.size(); i++) {
-						Enemy enery = gf.eneryList.get(i);
-						enery.x-=this.xspeed;
+					for (int i = 0; i <gf.enemyList.size(); i++) {
+						Enemy enemy = gf.enemyList.get(i);
+						enemy.x-=this.xspeed;
 					}
 					this.img= new ImageIcon("image/mari_right.gif").getImage();
 				}
@@ -138,8 +138,8 @@ public class Mario extends Thread {
 
 		Rectangle rect =null;
 		
-		for (int i = 0; i < gf.eneryList.size(); i++) {
-			Enemy enery = gf.eneryList.get(i);
+		for (int i = 0; i < gf.enemyList.size(); i++) {
+			Enemy enery = gf.enemyList.get(i);
 			
 			if(dir.equals("Left")){
 				rect = new Rectangle(enery.x+2,enery.y,enery.width,enery.height);
