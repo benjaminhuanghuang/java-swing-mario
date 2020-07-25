@@ -90,25 +90,29 @@ public class GameFrame extends JFrame{
 	@Override
 	public void paint(Graphics g) {
 		BufferedImage bi =(BufferedImage)this.createImage(this.getSize().width,this.getSize().height);
-		Graphics big = bi.getGraphics();
-		big.drawImage(bg.img, bg.x, bg.y, null);
+		Graphics bufferGraphics = bi.getGraphics();
 
-		for (int i = 0; i < enemyList.size(); i++) {
-			Enemy e = enemyList.get(i);
-			big.drawImage(e.img, e.x, e.y, e.width, e.height,null);
-		}
+		// Draw background
+		bufferGraphics.drawImage(bg.img, bg.x, bg.y, null);
 
-		for (int i = 0; i < boomList.size(); i++) {
-			Boom b =boomList.get(i);
-			Color c =big.getColor();
-			big.setColor(Color.red);
-			big.fillOval(b.x+=b.speed, b.y, b.width, b.width);
-			big.setColor(c);
-		}
+//		for (int i = 0; i < enemyList.size(); i++) {
+//			Enemy e = enemyList.get(i);
+//			bufferGraphics.drawImage(e.img, e.x, e.y, e.width, e.height,null);
+//		}
+//
+//		for (int i = 0; i < boomList.size(); i++) {
+//			Boom b =boomList.get(i);
+//			Color c =bufferGraphics.getColor();
+//			bufferGraphics.setColor(Color.red);
+//			bufferGraphics.fillOval(b.x+=b.speed, b.y, b.width, b.width);
+//			bufferGraphics.setColor(c);
+//		}
 
-		big.drawImage(mario.img, mario.x, mario.y, mario.width, mario.height,null);
+		// Draw mario
+		bufferGraphics.drawImage(mario.img, mario.x, mario.y, mario.width, mario.height,null);
+
+		// Display
 		g.drawImage(bi,0,0,null);
-
 	}
 
 	public void checkBoom(){
