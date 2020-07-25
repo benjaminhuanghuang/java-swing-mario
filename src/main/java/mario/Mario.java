@@ -3,8 +3,9 @@ package mario;
 import java.awt.Image;
 import java.awt.Rectangle;
 import javax.swing.ImageIcon;
-import com.itheima.ui.GameFrame;
-import com.itheima.role.Enemy;
+//
+import ui.GameFrame;
+import role.Enemy;
 
 //�Լ��Ľ�ɫ��
 public class Mario extends Thread {

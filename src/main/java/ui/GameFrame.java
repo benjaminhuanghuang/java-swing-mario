@@ -13,10 +13,7 @@ import role.Enemy;
 import role.Pipe;
 import util.Map;
 
-/**
-   ���崰�ڽ��棺չʾ��ɫ��
 
- */
 public class GameFrame extends JFrame{
 	// ��������:������Ҫһ�����������ġ�
 	public Mario mario;
